@@ -56,22 +56,22 @@ function verificar() {
             txt.innerText = `Detectamos Coroa com ${idade} ano(s).`
         }
 
-        else if (idade > 1000) {
-            img.style.backgroundImage = 'url(imagens/homem/EasterEgg2.webp)'
-            img.style.height = "200px"
-            txt.innerText = `Detectamos Vampiro com ${idade} ano(s).`
+        else if (idade >= 60 && idade < 200) {
+            img.style.backgroundImage = 'url(imagens/homem/idoso.jpg)'
+            img.style.height = "200px" 
+            txt.innerText = `Detectamos Idoso com ${idade} ano(s).`
         }
 
-        else if (idade > 200){
+        else if (idade >= 200 && idade < 1000){
             img.style.backgroundImage = 'url(imagens/homem/EasterEgg.jpg)'
             img.style.height = "200px"
             txt.innerText = `Detectamos Defunto com ${idade} ano(s).`
         }
 
-        else if (idade >= 60) {
-            img.style.backgroundImage = 'url(imagens/homem/idoso.jpg)'
-            img.style.height = "200px" 
-            txt.innerText = `Detectamos Idoso com ${idade} ano(s).`
+        else if (idade > 1000) {
+            img.style.backgroundImage = 'url(imagens/homem/EasterEgg2.webp)'
+            img.style.height = "200px"
+            txt.innerText = `Detectamos Vampiro com ${idade} ano(s).`
         }
         
         
@@ -125,22 +125,22 @@ function verificar() {
             txt.innerText = `Detectamos Coroa com ${idade} ano(s).`
         }
 
-        else if (idade > 1000) {
-            img.style.backgroundImage = 'url(imagens/mulher/EasterEgg2.jpg)'
-            img.style.height = "200px"
-            txt.innerText = `Detectamos Vampira com ${idade} ano(s).`
+        else if (idade >= 60 && idade < 200) {
+            img.style.backgroundImage = 'url(imagens/mulher/idosa.jpg)'
+            img.style.height = "200px" 
+            txt.innerText = `Detectamos Idosa com ${idade} ano(s).`
         }
 
-        else if (idade > 200){
+        else if (idade >= 200 && idade < 1000){
             img.style.backgroundImage = 'url(imagens/mulher/EasterEgg.jpg)'
             img.style.height = "200px"
             txt.innerText = `Detectamos Defunta com ${idade} ano(s).`
         }
 
-        else if (idade >= 60) {
-            img.style.backgroundImage = 'url(imagens/mulher/idosa.jpg)'
-            img.style.height = "200px" 
-            txt.innerText = `Detectamos Idosa com ${idade} ano(s).`
+        else if (idade > 1000) {
+            img.style.backgroundImage = 'url(imagens/mulher/EasterEgg2.jpg)'
+            img.style.height = "200px"
+            txt.innerText = `Detectamos Vampira com ${idade} ano(s).`
         }
         
     }

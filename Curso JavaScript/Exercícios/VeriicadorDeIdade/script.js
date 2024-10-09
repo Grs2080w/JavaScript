@@ -126,7 +126,7 @@ function verificar() {
         }
 
         else if (idade >= 60 && idade < 200) {
-            img.style.backgroundImage = 'url(imagens/mulher/idosa.jpg)'
+            img.style.backgroundImage = 'url(/imagens/mulher/idosa.jpg)'
             img.style.height = "200px" 
             txt.innerText = `Detectamos Idosa com ${idade} ano(s).`
         }

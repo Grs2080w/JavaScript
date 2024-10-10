@@ -14,6 +14,11 @@ function clicar() {
         txt.innerText = 'Impossível contar, adicione o início ou fim!'
     } 
 
+    else if (passo == 0) {
+        window.alert('Considerando passo = 1')
+        passo = 1
+    }
+
     else if (fim < 0 && inicio < 0) {
         window.alert("O inicio não pode ser menor que 0 quando o fim é menor que 0.")
         window.location.reload()
@@ -28,15 +33,6 @@ function clicar() {
 
     else if (fim < 0) { // Se o fim for menor que 0, ent ele adiciona mais 1, para o fim sair crt.
         while (c >= fim + 1) {
-            c += passo
-            txt.innerText = txt.innerText + ` ${c} 👉`
-        }
-    }
-
-    else if ((fim - inicio) % passo != 0) {  /* Evita que alguns passos façam o fim passar do
-        número requerido. */
-
-        while (c <= fim - passo) {
             c += passo
             txt.innerText = txt.innerText + ` ${c} 👉`
         }

@@ -13,42 +13,48 @@ function clicar() {
     if (inicio == 0 || fim == 0) {
         txt.innerText = 'Impossível contar, adicione o início ou fim!'
     } 
-    else if (fim < inicio) {
-        window.alert("O início não pode ser menor que o fim quando todos os valores são positivos")
+
+    else if (fim < 0 && inicio < 0) {
+        window.alert("O inicio não pode ser menor que 0 quando o fim é menor que 0.")
         window.location.reload()
     }
-    /*else if (fim < 0) {
+
+    else if (fim < 0 && ((fim - inicio) % passo != 0)) { // Se o fim for menor que 0, ent ele adiciona mais 1, para o fim sair crt.
+        while (c >= fim - passo) {
+            c += passo
+            txt.innerText = txt.innerText + ` ${c} 👉`
+        }
+    }
+
+    else if (fim < 0) { // Se o fim for menor que 0, ent ele adiciona mais 1, para o fim sair crt.
         while (c >= fim + 1) {
             c += passo
-            if (c == fim) {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            } else {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            }
+            txt.innerText = txt.innerText + ` ${c} 👉`
         }
-    }*/
-    else if (inicio < 0 || fim < 0 || passo < 0) {
-        window.alert("Nenhum dos valores pode ser menor que 0")
-        window.location.reload()
     }
-    else if (fim % passo != 0) {
+
+    else if ((fim - inicio) % passo != 0) {  /* Evita que alguns passos façam o fim passar do
+        número requerido. */
+
         while (c <= fim - passo) {
             c += passo
-            if (c == fim) {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            } else {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            }
+            txt.innerText = txt.innerText + ` ${c} 👉`
         }
     }
-    else {
+
+    else if (fim % passo != 0) { /* Evita que alguns passos façam o fim passar do
+        número requerido. */
+
+        while (c <= fim - passo) {
+            c += passo
+            txt.innerText = txt.innerText + ` ${c} 👉`
+        }
+    }
+
+    else {  // Pa normal
         while (c <= fim - 1) {
             c += passo
-            if (c == fim) {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            } else {
-                txt.innerText = txt.innerText + ` ${c} 👉`
-            }
+            txt.innerText = txt.innerText + ` ${c} 👉`
         }
     }
     txt.innerText = txt.innerText + `🚩`
@@ -61,5 +67,21 @@ function clicar() {
         window.alert("O passo não pode ser maior que o início.")
         window.location.reload()
     } */ 
+
+ /*else if (inicio < 0 || fim < 0 || passo < 0) {
+        window.alert("Nenhum dos valores pode ser menor que 0")
+        window.location.reload()
+    }
+*/
+
+        
+/*else if (fim < inicio) {
+    window.alert("O início não pode ser menor que o fim quando todos os valores são positivos")
+    window.location.reload()
+}*/
+
+/*else if (inicio != 0 || fim != 0 && passo === 0) {
+        window.alert('O passo não pode ser igual a 0.')
+    }*/
 
 

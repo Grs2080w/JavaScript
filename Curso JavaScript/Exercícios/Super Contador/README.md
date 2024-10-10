@@ -1,1 +1,1 @@
-    https://grs2080w.github.io/JavaScript/Curso%20JavaScript/Exercícios/VeriicadorDeIdade/index.html
+    https://grs2080w.github.io/JavaScript/Curso%20JavaScript/Exercícios/Super%20Contador/

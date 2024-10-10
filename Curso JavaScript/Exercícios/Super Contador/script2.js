@@ -13,6 +13,10 @@ function clicar() {
     if (inicio == 0 || fim == 0) {
         txt.innerText = 'Impossível contar, adicione o início ou fim!'
     } 
+    else if (fim < inicio) {
+        window.alert("O início não pode ser menor que o fim quando todos os valores são positivos")
+        window.location.reload()
+    }
     /*else if (fim < 0) {
         while (c >= fim + 1) {
             c += passo

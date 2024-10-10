@@ -31,6 +31,16 @@ function clicar() {
         window.alert("Nenhum dos valores pode ser menor que 0")
         window.location.reload()
     }
+    else if (fim % passo != 0) {
+        while (c <= fim - passo) {
+            c += passo
+            if (c == fim) {
+                txt.innerText = txt.innerText + ` ${c} 👉`
+            } else {
+                txt.innerText = txt.innerText + ` ${c} 👉`
+            }
+        }
+    }
     else {
         while (c <= fim - 1) {
             c += passo

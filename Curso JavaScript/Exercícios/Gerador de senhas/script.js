@@ -80,3 +80,5 @@ function gerarSenha() {
         window.alert('Escolha o Uso de Caracteres.')
     }
 }
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Analisador de Números</h1>
+    <main>
+        <div>
+            <label for="num">Número (entre 1 e 100):</label>
+
+            <!--Caixa de número-->
+            <input type="number" name="" id="num">
+
+            <!--Botão Adicionar-->
+            <input type="button" id="adici" value="Adicionar" onclick="adicionar()">
+
+
+            <br> <!-- Lista de números adicionados -->
+            <select name="" id="hist" size="7">
+
+        
+            </select>
+
+             <!-- Botão finalizar-->
+            <input type="button" value="Finalizar" id="fina" onclick="finalizar()">
+        </div>
+
+
+        <!--Resultados-->
+        <div class="res" id="total"></div>
+        <div class="res" id="maior"></div>
+        <div class="res" id="menor"></div>
+        <div class="res" id="soma10"></div>
+        <div class="res" id="media"></div>
+
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>

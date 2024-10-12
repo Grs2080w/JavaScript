@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gerador de Senhas</h1>
+
+    <main>
+        <input type="number" name="" id="carc" placeholder="Número de Caracteres" >
+
+        <br>
+        <br>
+
+        <p>Utilizar Caracteres Especiais?</p>
+
+        <!-- Opção Sim-->
+        <input type="radio" name="opc" id="sim">
+        <label for="sim">Sim</label>
+
+        <!-- Opção Não-->
+        <input type="radio" name="opc" id="nao">
+        <label for="nao">Não</label>
+
+        <br>
+        <br>
+
+        <!-- Botao gerar senha -->
+        <input type="button" id="gerar" value="Gerar Senha" onclick="gerarSenha()">
+
+        <div id="res1"></div>
+        <div id="res"><p></div>
+
+        <input type="button" value="Copiar 📋" id="ctrlc" onclick="copiar()">
+
+    
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

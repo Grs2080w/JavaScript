@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF,SHLN@23,57&family=Londrina+Sketch&family=Rubik+80s+Fade&family=Rubik+Dirt&display=swap');
+
+@font-face {
+    font-family: '8-bit';
+    src: url(8-bit\ Block\ Party.ttf);
+}
+
+/*'Rubik Dirt'
+'Honk'
+'Londrina Sketch' */
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: '8-bit'
+}
+
+body {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: black;
+}
+
+div {
+    flex: 1 1 auto;
+    background-color: rgb(0, 0, 0);
+
+    width: 46vw;
+    height: 40vw;
+
+    margin: 0px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+/*#hora {
+}*/
+
+.tempo {
+    text-align: center;
+    font-size: 30vw;
+
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgba(63, 63, 63, 0.64);
+    
+}
+
+#btn {
+    
+    background-color: black;
+    width: 5px;
+    height: 5px;
+    
+}
+
+#btn:hover {
+    border-color: white;
+}

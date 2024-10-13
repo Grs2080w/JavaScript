@@ -38,5 +38,13 @@ botao.addEventListener('click', () => {
     }
 })
 
+if (temHo < 22) {
+    ph.style.color = 'rgba(255, 255, 255)'
+    pm.style.color = 'rgba(255, 255, 255)'
+} else {
+    ph.style.color = 'rgba(255, 255, 255, 0)'
+    pm.style.color = 'rgba(255, 255, 255, 0)'
+}
+
 
 

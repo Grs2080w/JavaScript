@@ -38,7 +38,7 @@ botao.addEventListener('click', () => {
     }
 })
 
-if (temHo < 22) {
+if (temHo < 22 && temHo > 6) {
     ph.style.color = 'rgba(255, 255, 255)'
     pm.style.color = 'rgba(255, 255, 255)'
 } else {

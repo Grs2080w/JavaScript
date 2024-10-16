@@ -9,39 +9,40 @@
 <body>
 
     <main>
-        <div id="visor"></div>
+        <div id="visor1"></div>
 
-        <div id="linha1">
-            <button class="btn" id="AC">AC</button>
-            <button class="btn">X</button>
-            <button class="btn">/</button>
+        <div class="linhas" id="linha1">
+            <button class="btn" id="btn_sete" onclick="addToVisor('7')">7</button>
+            <button class="btn" id="btn_oito" onclick="addToVisor('8')">8</button>
+            <button class="btn" id="btn_nove" onclick="addToVisor('9')">9</button>
+            <button class="btn" id="btn_divi" onclick="addToVisor('/')">÷</button>
         </div>
 
-        <div id="linha2">
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn">-</button>
+        <div class="linhas" id="linha2">
+            <button class="btn" id="btn_quatro" onclick="addToVisor('4')">4</button>
+            <button class="btn" id="btn_cinco" onclick="addToVisor('5')">5</button>
+            <button class="btn" id="btn_seis" onclick="addToVisor('6')">6</button>
+            <button class="btn" id="btn_multi" onclick="addToVisor('*')">×</button>
+            
         </div>
 
-        <div id="linha3">
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">+</button>
+        <div class="linhas" id="linha3">
+            <button class="btn" id="btn_um" onclick="addToVisor('1')">1</button>
+            <button class="btn" id="btn_dois" onclick="addToVisor('2')">2</button>
+            <button class="btn" id="btn_tres" onclick="addToVisor('3')">3</button>
+            <button class="btn" id="btn_mais" onclick="addToVisor('+')">+</button>
         </div>
 
-        <div id="linha4">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn" id="btn0">0</button>
+        <div class="linhas" id="linha4">
+            <button class="btn" id="btn_pon" onclick="addToVisor('.')">.</button>
+            <button class="btn" id="btn_zero" onclick="addToVisor('0')">0</button>
+            <button class="btn" id="btn_menos" onclick="addToVisor('-')">-</button>
+            <button class="btn" id="btnigual" onclick="calcula()">=/C</button>
         </div>
 
-        <div id="linha45"><button class="btn" id="btnigual">=</button>
-        </div>
     </main>
+    <div id="resultado"></div>
 
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>

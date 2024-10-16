@@ -41,10 +41,10 @@ function calcula() {
         console.log(res3.length + '2')
     }
 
-    if (visor.innerText == res) { // Apaga o visor
+    if (visor.innerText == res || visor.innerText == 'undefined') { // Apaga o visor
         visor.innerText = ''
     }
 
 }
 
-/* Por motivos de design foi colocado a função de igual e de apagar no mesmo botão, o que fez com que o código ficasse com umas linhas a mais, para que o botão =/C reconhecesse quando deveria agir da melhor forma possível. Porém, ainda sim, depois de apagar o 'reslongo' ele retorna um 'undefined', que posteriormente pode ser apagado no mesmo botão. Isso é um ponto não resolvido. De resto ficou como deveria ficar. */
+/* Por motivos de design foi colocado a função de igual e de apagar no mesmo botão, o que fez com que o código ficasse com umas linhas a mais, para que o botão =/C reconhecesse quando deveria agir da melhor forma possível.*/

@@ -1,18 +1,20 @@
+var b = 10
+
 const ctx = document.getElementById('myChart');
-  
     new Chart(ctx, {
-      type: 'line',
+      type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Red', 'Blue'],
         datasets: [{
           label: 'Contagem de Votos',
-          data: [12, 19, 3, 5, 2, 12],
+          data: [b, 19],
           borderWidth: 2
         }]
       },
       options: {
-        borderColor: 'black',
+        borderColor: 'black', 
         backgroundColor: 'black',
+        
         indexAxis: 'x',
         
         scales: {

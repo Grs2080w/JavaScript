@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Índice de Massa Corporal (IMC)</h1>
+    <main>
+        <div id="prim_res">
+            <label for="valor1">Qual sua Altura?</label>
+            
+            <br>
+            <!-- Idade -->
+            <input type="range" name="altura" id="valor1" min="0" max="250" value="170">
+            <span id="res_valor1"></span>
+        </div>
+
+
+        <div id="seg_res">
+            <label id="qualPeso" for="valor2">Qual seu peso?</label>
+             <br>
+
+            <input type="range" name="peso" id="valor2" min="0" max="300" value="70">
+
+            <span id="res_valor2"></span>
+        </div>
+
+        <button id="verRes">Ver Resultado</button>
+
+        <div id="resFinal">
+            <p id="res5"></p>
+            <img id="img" src="imc.png" alt="img_imc">
+        </div>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

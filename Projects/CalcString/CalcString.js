@@ -1,5 +1,3 @@
-var e = '5+1'
-
 // Retorna um Number da soma
 function soma(x) {
     var l = x.lastIndexOf('+')
@@ -9,8 +7,8 @@ function soma(x) {
     if (v2.indexOf('+') != -1) {v2 = soma(v2)}
     return Number(v1) + Number(v2)
 }
-
 soma('5+1')
+
 
 // Retorna um number da divisão
 function dividir(x) {
@@ -21,8 +19,8 @@ function dividir(x) {
     if (v2.indexOf('/') != -1) {v2 = dividir(v2)}
     return v1 / v2
 }
-
 dividir('15/3')
+
 
 // Retorna um number da multiplicação
 function multiplicar(x) {
@@ -33,8 +31,9 @@ function multiplicar(x) {
     if (v2.indexOf('*') != -1) {v2 = multiplicar(v2)}
     return v1 * v2
 }
-
 multiplicar('5*2')
+
+
 // Retorna um number da subtração
 function subtracão(x) {
     var l = x.lastIndexOf('-')
@@ -44,8 +43,8 @@ function subtracão(x) {
     if (v2.indexOf('-') != -1) {v2 = subtracão(v2)}
     return Number(v1) - Number(v2)
 }
-
 subtracão('7-5')
+
 
 // Retorna o number do produto de uma potência escrita de duas formas diferentes ('**', '^').
 function potencia(x) {
@@ -61,8 +60,9 @@ function potencia(x) {
     
     return v1 ** v2
 }
-
 potencia('5^2')
+
+
 /* Retorna o number de: n + n%, n- n%, n*n%, ou n/n%(Sendo que na divisao a porcentagem considerada é a porcentagem do primeiro valor, e não o número divido por 100.)*/
 function porce(x) {
     if (x.indexOf('+') != -1) {
@@ -94,8 +94,10 @@ function porce(x) {
 
 porce('5-5%')
 
+
+// Faz cálculos simples, de apenas um tipo de operação por vez, mas das 4 operações, usando as funções já existentes nesse código.
 var re2
-function calcSimples(v) {
+function calcSimple(v) {
     
     if (v.indexOf('+') != -1) {
         re2 = soma(v)
@@ -107,7 +109,6 @@ function calcSimples(v) {
         re2 = dividir(v)
     } else if (v.indexOf('^') != -1) {
         re2 = potencia(v) }
-
 
     return re2
 }
@@ -122,8 +123,7 @@ function tiraParen(t) {
         var v = t.slice(L + 1, L2)
         var re
 
-        calcSimples(v)
-        re = re2
+        re = calcula(v)
 
         if (L == 0 || t[L-1] == '+' || t[L-1] == '-' || t[L-1] == '/' || t[L-1] == '*') {
             var r = t.replace(t.slice(L, L2 + 1), `${re}`)
@@ -137,90 +137,75 @@ function tiraParen(t) {
 }
 
 
+// calc2 é uma função complexa, ela analisa uma expressão maior em string e resolve retornando o resultado.
 function calc2(x) {
-    if (x.indexOf('+') == -1) {
-        return x
-    } else {
 
-        var l, l2, re, v, v1, v2, v3
-        if (x.indexOf('/') != -1) {
-            l = x.indexOf('/')
-            var c = 1
-            while (x[l-c] != '+') {
-                v += x[l-c]
-                c++
-                re = v.slice(9, v.length + 1)
-                v1 = re.split('')
-                v1.reverse()
-                v1 = v1.join("")
-            }
-
-            while (x[l+c] != '-') {
-                v += x[l+c]
-                c++
-                re = v.slice(9, v.length + 1)
-                v2 = re.split('')
-                v2.reverse()
-                v2 = v2.join("")
-            }
-
-        }
-    }
-
-    return v2
-}
-
-
-function calc2(x) {
-    if (x.indexOf('/') == -1 && x.indexOf('*') == -1 && x.indexOf('+') == -1 && x.indexOf('-') == -1) {
+    if (x.length == 2 || x.indexOf('/') == -1 && x.indexOf('*') == -1 && x.indexOf('+') == -1 && x.indexOf('-') == -1 && x.indexOf('^') == -1) {
         return x
 
     } else {
 
-        var tf2 = new Array
-        var v = x.split("")
         var re
 
-        temdivi = v.lastIndexOf('/')
-        temmult = v.lastIndexOf('*')
-        temmais = v.indexOf('+')
-        temmenos = v.indexOf('-')
+        temdivi = x.indexOf('/')
+        temmult = x.indexOf('*')
+        temmais = x.indexOf('+')
+        temmenos = x.indexOf('-')
+        tempote = x.indexOf('^')
 
-        var t = [[v.lastIndexOf('/')], [v.lastIndexOf('*')], [v.lastIndexOf('+')], [v.indexOf('-')]]
-        var tf = [[v.includes('/')], [v.includes('*')], [v.includes('+')], [v.includes('-')], [v.includes('-')]]
+        var t = x.split("")
+        var tf2 = []
 
-        for (c=0 ; c <= 3 ; c++) {
-            if (tf[c] == 'true') {
-                var g = []
-                g.push(t[c])
-                tf2.push(t[c])
-            } else {
-                tf2.push()
+        function separaIndex(elemento, index) {
+            if (elemento == '*' || elemento == '+' || elemento == '/' || elemento == '-' || elemento == '^') {
+            tf2.push(index)
             }
-        }
+          }
+          t.forEach(separaIndex);
 
-
-        //console.log(tf2)
-
-        //tf2 = tf2.split('')
-        tf2.sort((a, b) => a - b)
-
-        //console.log(tf2)
-
-        //console.log(x)
-
-        if (temdivi != -1){
+          if (tempote != -1){
 
             var c = 0
-            while (Number(tf2[c]) != temdivi) {
-                var posd = c + 1
+            while (Number(tf2[c]) <= tempote) {
+                var pospo = c 
                 c++
             } 
+        
+            var v1, v2, v3
 
-            //console.log(x + ' a')
-            
-            //console.log(posd)
+            if (tf2.length == 1) {
+                v3 = potencia(x)
+                re = v3
 
+            } else if (pospo == 0) {
+                v1 = x.slice(0, tempote)
+                v2 = x.slice(tempote+1, tf2[1])
+                v3 = v1 ** v2
+                re = x.replace(x.slice(0 , tf2[1]), v3)
+
+            } else if (pospo > 0 && pospo <= tf2.length - 2) {
+                v1 = x.slice(parseInt(tf2[pospo - 1]) + 1, tempote)
+                v2 = x.slice(tempote+1, tf2[pospo + 1])
+                v3 = v1 ** v2
+                re = x.replace(x.slice(parseInt(tf2[pospo - 1]) + 1 , tf2[pospo + 1]), v3)
+
+            } else if (pospo == tf2.length - 1){
+                v1 = x.slice(parseInt(tf2[pospo - 1]) + 1 , tempote)
+                v2 = x.slice(tempote+1, x.length + 1)
+                if (v1.indexOf('/') != -1) {v1 = potencia(v1)}
+                v3 = v1 ** v2
+                re = x.replace(x.slice(parseInt(tf2[pospo - 1]) + 1 , x.length + 1), v3)
+            }
+
+
+        } else if (temdivi != -1){
+
+            var c = 0
+            while (Number(tf2[c]) <= temdivi) {
+                var posd = c 
+                c++
+            } 
+        
             var v1, v2, v3
 
             if (tf2.length == 1) {
@@ -263,9 +248,8 @@ function calc2(x) {
                 re = v3
 
             } else if (posm == 0) {
-                v1 = x.slice(parseInt(tf2[posm - 1])+1, temmult)
+                v1 = x.slice(0, temmult)
                 v2 = x.slice(temmult+1, tf2[1])
-                console.log(v1)
                 v3 = v1 * v2
                 re = x.replace(x.slice(0 , tf2[1]), v3)
 
@@ -287,8 +271,6 @@ function calc2(x) {
 
         } else if (temmais != -1){
 
-            //console.log('Entrou no mais ----------------------------')
-
             var c = 0
             do {
                 var posma = c
@@ -296,8 +278,6 @@ function calc2(x) {
             } while (Number(tf2[c]) == temmais)
             var v1, v2, v3
 
-
-            //console.log(tf2)
 
             if (tf2.length == 1) {
                 v3 = soma(x)
@@ -327,8 +307,6 @@ function calc2(x) {
             
         } else if (temmenos != -1){
 
-            //console.log('Entrou no menos -----------------------------')
-
             var c = 0
     
             do {
@@ -356,15 +334,12 @@ function calc2(x) {
 
             } else if (posme == tf2.length - 1){
                 v1 = x.slice(parseInt(tf2[posme - 1]) + 1 , temmenos)
-                console.log(x)
                 v2 = x.slice(temmenos+1, x.length + 1)
                 v3 = subtracão(x.slice(parseInt(tf2[posme - 1]) + 1 , x.length + 1))
                 re = x.replace(x.slice(parseInt(tf2[posme - 1]) + 1 , x.length + 1), v3)
                 
 
             }
-
-            //console.log('Saiu do menos ----------------------------')
 
         } 
         re = `${re}`
@@ -373,28 +348,28 @@ function calc2(x) {
     }
 
 
-}   
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-var expre = '5+6(4^9)*2/3' // = 1.048.581
-var expre2 = '(5+8)+(4-9)'
-var expre3 = '(10-9)/(5+4)+(4*1)' // = 1/9+4
-var expre4 = '5+6(4^9)*2/3+10' // = 1.048.590,9   943.731,9
-var expre5 = '5+1'
+// Recebe uma expressão algébrica string, podendo conter soma, subtração, divisão, multiplicação, potência e parênteses. E retorna o resultado em number. Retorna 0 se nenhum valor informado.
 
-//console.log(tiraParen(expre3))
-console.log(calcula(expre4)) // Resolver expre 3, e 4
-
-function calcula(x) {
-    var r, final
-    var t = tiraParen(x)
-    r = t
-    var x = calc2(r)
-    final = x
-
-    return final
+function calcula(x='') {
+    var r = tiraParen(x)
+    var final = calc2(r)
+    return Number(final)
 }
 
-/* Criar funções que resolvam um tipo de operação de cada vez, até chegar no resultado final. */
+
+// Expressões Teste _____________________
+
+var expre = '5+6(4^9)*2/3'
+var expre1 = '56*89'
+var expre2 = '(5+8)+(4-9)'
+var expre3 = '(10-9)/(5+4)+(4*1)' 
+var expre4 = '5+6(4^9)*2/3+10'
+var expre5 = '5+1'
+var expre6 = '(5+6/9*5)+5(5^2)'
+
+console.log(calcula()) 

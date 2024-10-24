@@ -372,4 +372,4 @@ var expre4 = '5+6(4^9)*2/3+10'
 var expre5 = '5+1'
 var expre6 = '(5+6/9*5)+5(5^2)'
 
-console.log(calcula()) 
+console.log(calcula(expre)) 

@@ -26,19 +26,19 @@ function calcula() {
     var res2 = eval(res) // Calcula
     var res3 = `${res2}` // Tranforma o resultado para string para ser analisado posteriormente.
 
-    if (res3.length > 9) {
+    if (res.length > 9) {
         /* Se o resultado for maior que 9 digitos, que é o maximo da tela, o número é arredondado para 2 casas após a vírgula, e um 'Apx' de 'aproximadamente' é mostrado. */
 
-        var reslongo = res3.slice(0, 4) + 'Apx'
+        //var reslongo = res3.slice(0, 4) + 'Apx'
+        var reslongo = res2.toPrecision(3)
         visor.innerText = reslongo
 
-    } else if (res3.indexOf('.') == -1) {
+    } else if (res3.indexOf('.') != -1) {
         // Se o resultado não tiver ponto 
-        visor.innerText = res2
+        visor.innerText = res2.toPrecision(3)
 
     } else {/* Se tiver ponto, ele limita a 2 casas depois do ponto */
         visor.innerText = res2.toFixed(2)
-        console.log(res3.length + '2')
     }
 
     if (visor.innerText == res || visor.innerText == 'undefined') { // Apaga o visor

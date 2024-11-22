@@ -51,7 +51,7 @@ function gerarSenha() {
         // Determina funcionalidade do botão copiar
         copy.addEventListener('click', () => {
     
-            navigator.clipboard.writeText(senha);
+            navigator.clipboard.writeText(senha); // Copia um texto para a area de transferencia
             
             alert('Texto copiado para área de transferência!');
           });
